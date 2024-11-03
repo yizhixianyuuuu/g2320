@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G2320服务中心</title>
+    <link rel="stylesheet" href="https://cdn.rthe.cn/uncached-1726396906-avif/schoolbbs/css/styles.css">
+    <style>
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            width: 150px;
+            /* 设置固定宽度 */
+            text-align: center;
+            padding: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #d3d3d3;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #353535;
+            /* 设置背景颜色 */
+        }
+
+        body {
+            user-select: none;
+            /* 禁止文字选择 */
+            -webkit-user-select: none;
+            /* 禁止文字选择 */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            /* 设置标题文字颜色 */
+        }
+
+        .nav {
+            margin-bottom: 20px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav li {
+            margin-right: 10px;
+        }
+
+        .notice {
+            border: 2px solid rgb(255, 255, 255);
+            /* 设置边框颜色 */
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+            /* 设置文字颜色 */
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .info-box {
+            border: 2px solid white;
+            /* 设置信息框边框颜色 */
+            border-radius: 10px;
+            padding: 10px;
+            width: calc(50% - 20px);
+            height: 200px;
+            color: white;
+            /* 设置信息框文字颜色 */
+        }
+
+        .info-gap {
+            width: 20px;
+        }
+
+        .extra-info-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .extra-info-box {
+            border: 2px solid white;
+            /* 设置信息框边框颜色 */
+            border-radius: 10px;
+            padding: 10px;
+            width: calc(33.33% - 20px);
+            height: 200px;
+            margin-bottom: 40px;
+            color: white;
+            /* 设置信息框文字颜色 */
+        }
+
+        .vertical-info-box {
+            border: 2px solid white;
+            /* 设置竖排信息框边框颜色 */
+            border-radius: 10px;
+            padding: 10px;
+            width: calc(50% - 20px);
+            height: 200px;
+            color: white;
+            /* 设置竖排信息框文字颜色 */
+        }
+
+        .vertical-info-gap {
+            height: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            /* 设置页脚文字颜色为 */
+        }
+
+        .info-box {
+            height: auto;
+        }
+
+        .info-column {
+            align-items: flex-start;
+        }
+
+        .inline-block {
+            display: inline-block;
+            vertical-align: middle;
+            /* 垂直居中 */
+        }
+
+        .right-align {
+            text-align: right;
+        }
+
+        .left-align {
+            text-align: left;
+        }
+
+        a:link {
+            color: rgb(0, 0, 0);
+            /* 设置链接文字颜色为 */
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: rgb(0, 0, 0);
+            /* 设置已访问链接文字颜色 */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        </div>
+
+        <div class="notice">
+            <h2>Hi，<span id="greeting"></span></h2>
+            <h5 class="right-align">集控：端口服务器异常</h5>
+            <p><span class="bold-text" style="color: #70C000;"></span></p>
+        </div>
+
+        <div class="notice">
+            <h2>课堂互动</h2>
+            <p>
+            </p>
+        </div>
+
+        <div class="notice">
+            <h2>课件下载</h2>
+            <p><span class="bold-text" style="color: white;">没有配置或者无法连接到集控服务器！</span></p>
+            <p>
+        </div>
+
+        <script>
+            var now = new Date();
+            var hour = now.getHours();
+            var greeting = document.getElementById('greeting');
+
+            if (hour >= 7 && hour < 12) {
+                greeting.textContent = "上午好！";
+            } else if (hour >= 12 && hour < 13) {
+                greeting.textContent = "中午好！";
+            } else if (hour >= 13 && hour < 19) {
+                greeting.textContent = "下午好！";
+            } else if (hour >= 19 && hour < 24) {
+                greeting.textContent = "晚上好！";
+            } else {
+                greeting.textContent = "凌晨了，早点睡吧！";
+            }
+        </script>
+    </div>
+</body>
+
+</html>
